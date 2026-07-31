@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>EduTrack Dashboard</title>
+
+  <link rel="stylesheet"
+        href="../css/dashboard.css">
+
+  <!-- Protected Route -->
+  <script>
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      window.location.href = "../login.html";
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <h2>EduTrack</h2>
+
+     <ul id="sidebarMenu">
+
+</ul>
+
+    </div>
+
+
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- Welcome -->
+      <h1 id="welcomeText"></h1>
+
+
+
+      <!-- Dashboard Cards -->
+      <div class="cards">
+
+        <div class="card">
+          <h3>Attendance</h3>
+
+          <p id="attendanceCard">0%</p>
+        </div>
+
+
+        <div class="card">
+          <h3>Marks</h3>
+
+          <p id="marksCard">0</p>
+        </div>
+
+
+        <div class="card">
+          <h3>Notices</h3>
+
+          <p id="noticeCard">0</p>
+        </div>
+
+      </div>
+
+
+
+      <!-- Role Based Content -->
+      <div id="roleContent"></div>
+
+      <!-- Edit Profile Modal -->
+<div id="editProfileModal" class="modal" style="display:none;">
+
+  <div class="modal-content">
+
+    <span onclick="closeEditProfile()" style="float:right;cursor:pointer;font-size:25px;">
+      &times;
+    </span>
+
+    <h2>Edit Profile</h2>
+
+    <input type="text" id="editName" placeholder="Name"><br><br>
+
+    <input type="email" id="editEmail" placeholder="Email"><br><br>
+
+    <input type="text" id="editRoll" placeholder="Roll Number"><br><br>
+
+<input type="text" id="editDepartment" placeholder="Department"><br><br>
+
+<select id="editSemester">
+  <option value="">Select Semester</option>
+  <option>1st Semester</option>
+  <option>2nd Semester</option>
+  <option>3rd Semester</option>
+  <option>4th Semester</option>
+  <option>5th Semester</option>
+  <option>6th Semester</option>
+  <option>7th Semester</option>
+  <option>8th Semester</option>
+</select><br><br>
+
+<input type="text" id="editPhone" placeholder="Phone"><br><br>
+
+    <input type="file" id="editPhoto"><br><br>
+
+    <button onclick="saveProfile()">
+    Save Changes
+</button>
+
+  </div>
+
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="../js/student.js"></script>
+
+  
+
+</body>
+
+</html>

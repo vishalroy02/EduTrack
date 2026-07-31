@@ -1,0 +1,434 @@
+/* ===========================
+   Google Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:40px 20px;
+
+    background:linear-gradient(135deg,#4facfe,#00c6fb);
+
+}
+
+/* ===========================
+   Wrapper
+=========================== */
+
+.wrapper{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ===========================
+   Card
+=========================== */
+
+.card{
+
+    width:430px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:40px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+    animation:fade .5s ease;
+
+}
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo{
+
+    width:90px;
+
+    height:90px;
+
+    background:#2b7de9;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:auto;
+
+    font-size:36px;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+.card h1{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#222;
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    text-align:center;
+
+    color:#666;
+
+    line-height:28px;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   Input Box
+=========================== */
+
+.input-group{
+
+    display:flex;
+
+    align-items:center;
+
+    background:#fff;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    margin-bottom:18px;
+
+    transition:.3s;
+
+}
+
+.input-group:focus-within{
+
+    border-color:#2b7de9;
+
+    box-shadow:0 0 10px rgba(43,125,233,.2);
+
+}
+
+.input-group>i{
+
+    width:55px;
+
+    text-align:center;
+
+    color:#2b7de9;
+
+    font-size:18px;
+
+}
+
+.input-group input,
+.input-group select{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:15px 12px;
+
+    font-size:15px;
+
+    background:transparent;
+
+}
+
+.input-group select{
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   Password Eye
+=========================== */
+
+.toggle-password{
+
+    width:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:#777;
+
+    transition:.3s;
+
+}
+
+.toggle-password:hover{
+
+    color:#2b7de9;
+
+}
+
+/* ===========================
+   Button
+=========================== */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#2b7de9,#4facfe);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button i{
+
+    margin-right:8px;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(43,125,233,.35);
+
+}
+
+/* ===========================
+   Bottom Text
+=========================== */
+
+.bottom-text{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#555;
+
+    font-size:15px;
+
+}
+
+.bottom-text a{
+
+    color:#2b7de9;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.bottom-text a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+   Card Animation
+=========================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Background Decoration
+=========================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.10);
+
+    bottom:-180px;
+
+    right:-150px;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    .card{
+
+        width:100%;
+
+        max-width:430px;
+
+        padding:30px 25px;
+
+    }
+
+    .logo{
+
+        width:75px;
+
+        height:75px;
+
+        font-size:30px;
+
+    }
+
+    .card h1{
+
+        font-size:34px;
+
+    }
+
+    .card p{
+
+        font-size:15px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .card{
+
+        padding:25px 18px;
+
+    }
+
+    .input-group input,
+    .input-group select{
+
+        font-size:14px;
+
+        padding:13px 10px;
+
+    }
+
+    button{
+
+        font-size:15px;
+
+        padding:14px;
+
+    }
+
+}
+
+

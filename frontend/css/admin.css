@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#eef2f7;
+}
+
+.container{
+    display:flex;
+}
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#1e3a8a;
+    color:white;
+    padding:20px;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:15px;
+    margin:10px 0;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.sidebar li:hover,
+.sidebar .active{
+    background:#2563eb;
+}
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.main h1{
+    margin-bottom:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card i{
+    font-size:45px;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+#content{
+    margin-top:40px;
+}
+
+form {
+    margin-top: 20px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 12px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background: #1d4ed8;
+}
+.teacherTable{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+    background:white;
+}
+
+.teacherTable th,
+.teacherTable td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+.teacherTable th{
+    background:#2563eb;
+    color:white;
+}
+
+.teacherTable tr:nth-child(even){
+    background:#f5f5f5;
+}
+
+.teacherTable tr:hover{
+    background:#e8f0ff;
+}
+.editBtn{
+
+background:#22c55e;
+
+color:white;
+
+border:none;
+
+padding:8px 12px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+margin-right:8px;
+
+}
+
+.deleteBtn{
+
+background:#ef4444;
+
+color:white;
+
+border:none;
+
+padding:8px 12px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+}

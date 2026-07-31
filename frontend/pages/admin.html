@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack Admin Dashboard</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <h2>EduTrack</h2>
+
+        <ul>
+
+            <li class="active">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </li>
+
+            <li id="teacherBtn">
+                <i class="fas fa-user-tie"></i>
+                Add Teacher
+            </li>
+
+            <li id="parentBtn">
+                <i class="fas fa-users"></i>
+                Add Parent
+            </li>
+
+            <li id="viewTeacherBtn">
+                <i class="fas fa-chalkboard-teacher"></i>
+                View Teachers
+            </li>
+
+            <li id="viewParentBtn">
+                <i class="fas fa-user-friends"></i>
+                View Parents
+            </li>
+
+            <li id="logoutBtn">
+                <i class="fas fa-right-from-bracket"></i>
+                Logout
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main">
+
+        <h1>Welcome Admin 👋</h1>
+
+        <div class="cards">
+
+            <div class="card" id="cardTeacher">
+                <i class="fas fa-user-tie"></i>
+                <h3>Add Teacher</h3>
+            </div>
+
+            <div class="card" id="cardParent">
+                <i class="fas fa-users"></i>
+                <h3>Add Parent</h3>
+            </div>
+
+            <div class="card" id="cardViewTeacher">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>View Teachers</h3>
+            </div>
+
+            <div class="card" id="cardViewParent">
+                <i class="fas fa-user-friends"></i>
+                <h3>View Parents</h3>
+            </div>
+
+        </div>
+
+        <div id="content"></div>
+
+    </main>
+
+</div>
+
+<script src="../js/admin.js"></script>
+
+</body>
+</html>
