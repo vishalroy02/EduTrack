@@ -53,7 +53,7 @@ if (role === "student") {
 
   welcomeText.innerHTML = "";
 
-  fetch(`http://localhost:5000/api/student/${userId}`)
+  fetch(`https://edutrack-m2ls.onrender.com/api/student/${userId}`)
     .then((res) => res.json())
     .then((data) => {
       // Save data for PDF
@@ -183,7 +183,7 @@ ${
 student.photo
 ?
 `<img
-src="http://localhost:5000/uploads/${student.photo}"
+src="https://edutrack-m2ls.onrender.com/uploads/${student.photo}"
 width="120"
 height="120"
 style="border-radius:50%;object-fit:cover;margin-bottom:15px;"
@@ -517,7 +517,7 @@ if (!rollNo) {
 }
 
 const response = await fetch(
-    `http://localhost:5000/api/student/roll/${rollNo}`
+    `https://edutrack-m2ls.onrender.com/api/student/roll/${rollNo}`
 );
 
 const data = await response.json();
@@ -639,7 +639,7 @@ data.recentAttendance
 <div class="profile-card">
 
 ${student.photo
-? `<img src="http://localhost:5000/uploads/${student.photo}"
+? `<img src="https://edutrack-m2ls.onrender.com/uploads/${student.photo}"
 width="120"
 height="120"
 style="border-radius:50%;object-fit:cover;margin-bottom:15px;">`
@@ -747,7 +747,7 @@ document.getElementById("studentRollNo").value;
     document.getElementById("attendanceStatus").value;
 
   const response = await fetch(
-    "http://localhost:5000/api/teacher/attendance",
+    "https://edutrack-m2ls.onrender.com/api/teacher/attendance",
     {
       method: "POST",
 
@@ -799,7 +799,7 @@ async function addMarks() {
     }
 
     const response = await fetch(
-        "http://localhost:5000/api/teacher/marks",
+        "https://edutrack-m2ls.onrender.com/api/teacher/marks",
         {
 
             method: "POST",
@@ -835,7 +835,7 @@ async function addMarks() {
         if (!confirmUpdate) return;
 
         const updateResponse = await fetch(
-            "http://localhost:5000/api/teacher/marks",
+            "https://edutrack-m2ls.onrender.com/api/teacher/marks",
             {
 
                 method: "PUT",
@@ -894,7 +894,7 @@ async function fetchStudentDetails() {
     try{
 
         const response = await fetch(
-            `http://localhost:5000/api/teacher/student/${rollNo}`
+            `https://edutrack-m2ls.onrender.com/api/teacher/student/${rollNo}`
         );
 
         const data = await response.json();
@@ -955,7 +955,7 @@ async function addNotice() {
     document.getElementById("noticeMessage").value;
 
   const response = await fetch(
-    "http://localhost:5000/api/teacher/notice",
+    "https://edutrack-m2ls.onrender.com/api/teacher/notice",
     {
       method: "POST",
 
@@ -999,7 +999,7 @@ async function viewStudents() {
   try {
 
     const response = await fetch(
-      "http://localhost:5000/api/teacher/students"
+      "https://edutrack-m2ls.onrender.com/api/teacher/students"
     );
 
     const students = await response.json();
@@ -1094,7 +1094,7 @@ async function searchStudent() {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/teacher/search/${keyword}`
+            `https://edutrack-m2ls.onrender.com/api/teacher/search/${keyword}`
         );
 
         const students = await response.json();
@@ -1135,7 +1135,7 @@ async function deleteStudent(id) {
 
     const response = await fetch(
 
-      `http://localhost:5000/api/teacher/students/${id}`,
+      `https://edutrack-m2ls.onrender.com/api/teacher/students/${id}`,
 
       {
         method: "DELETE"
@@ -1178,7 +1178,7 @@ if (newSemester === null) return;
   if (newPhone === null) return;
 
   const response = await fetch(
-    `http://localhost:5000/api/teacher/students/${id}`,
+    `https://edutrack-m2ls.onrender.com/api/teacher/students/${id}`,
     {
       method: "PUT",
       headers: {
@@ -1274,7 +1274,7 @@ if (student.photo) {
 
     img.crossOrigin = "Anonymous";
 
-    img.src = `http://localhost:5000/uploads/${student.photo}`;
+    img.src = `https://edutrack-m2ls.onrender.com/uploads/${student.photo}`;
 
     doc.addImage(img, "JPEG", 155, y + 8, 28, 35);
 
@@ -1503,7 +1503,7 @@ async function saveProfile() {
 
         // Profile Update
         const profileResponse = await fetch(
-            `http://localhost:5000/api/student/update/${userId}`,
+            `https://edutrack-m2ls.onrender.com/api/student/update/${userId}`,
             {
                 method: "PUT",
                 headers: {
@@ -1536,7 +1536,7 @@ async function saveProfile() {
             formData.append("photo", photoInput.files[0]);
 
             const photoResponse = await fetch(
-                `http://localhost:5000/api/student/photo/${userId}`,
+                `https://edutrack-m2ls.onrender.com/api/student/photo/${userId}`,
                 {
                     method: "POST",
                     body: formData

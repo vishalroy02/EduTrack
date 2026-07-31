@@ -54,7 +54,7 @@ required>
 
         try {
 
-            const response = await fetch("http://localhost:5000/api/admin/addTeacher", {
+            const response = await fetch("https://edutrack-m2ls.onrender.com/api/admin/addTeacher", {
 
                 method: "POST",
 
@@ -134,7 +134,7 @@ required>
         const email = document.getElementById("parentEmail").value;
         const password = document.getElementById("parentPassword").value;
 
-        const response = await fetch("http://localhost:5000/api/admin/addParent", {
+        const response = await fetch("https://edutrack-m2ls.onrender.com/api/admin/addParent", {
 
             method: "POST",
 
@@ -170,7 +170,7 @@ document.getElementById("viewTeacherBtn").onclick = async () => {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/admin/teachers",
+            "https://edutrack-m2ls.onrender.com/api/admin/teachers",
             {
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token")
@@ -248,7 +248,7 @@ Delete
 document.getElementById("viewParentBtn").onclick = async () => {
 
     const response = await fetch(
-        "http://localhost:5000/api/admin/parents",
+        "https://edutrack-m2ls.onrender.com/api/admin/parents",
         {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token")
@@ -341,7 +341,7 @@ async function deleteTeacher(id){
 
     const response=await fetch(
 
-    `http://localhost:5000/api/admin/teacher/${id}`,
+    `https://edutrack-m2ls.onrender.com/api/admin/teacher/${id}`,
 
     {
 
@@ -372,7 +372,7 @@ if(newEmail===null) return;
 
 const response=await fetch(
 
-`http://localhost:5000/api/admin/teacher/${id}`,
+`https://edutrack-m2ls.onrender.com/api/admin/teacher/${id}`,
 
 {
 
@@ -412,7 +412,7 @@ async function deleteParent(id){
 
     const response = await fetch(
 
-        `http://localhost:5000/api/admin/parent/${id}`,
+        `https://edutrack-m2ls.onrender.com/api/admin/parent/${id}`,
 
         {
 
@@ -446,7 +446,7 @@ async function editParent(id,name,email){
 
     const response = await fetch(
 
-        `http://localhost:5000/api/admin/parent/${id}`,
+        `https://edutrack-m2ls.onrender.com/api/admin/parent/${id}`,
 
         {
 

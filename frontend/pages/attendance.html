@@ -299,13 +299,13 @@ if(role === "parent"){
 
     const rollNo = localStorage.getItem("selectedStudentRollNo");
 
-    apiURL = `http://localhost:5000/api/student/roll/${rollNo}`;
+    apiURL = `https://edutrack-m2ls.onrender.com/api/student/roll/${rollNo}`;
 
 }else{
 
     const userId = localStorage.getItem("userId");
 
-    apiURL = `http://localhost:5000/api/student/${userId}`;
+    apiURL = `https://edutrack-m2ls.onrender.com/api/student/${userId}`;
 
 }
 
@@ -340,7 +340,7 @@ student.phone || "-";
 if(student.photo){
 
 document.getElementById("studentPhoto").src=
-`http://localhost:5000/uploads/${student.photo}`;
+`https://edutrack-m2ls.onrender.com/uploads/${student.photo}`;
 
 }
 
