@@ -22,4 +22,4 @@ router.post(
   uploadStudentPhoto
 );
 
-module.exports = router;
+module.exports = router; 
