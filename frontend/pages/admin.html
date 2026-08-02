@@ -88,6 +88,30 @@
 
 </div>
 
+<!-- Edit Teacher Modal -->
+
+<div id="editTeacherModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeTeacherModal()">&times;</span>
+
+    <h2>Edit Teacher</h2>
+
+    <input type="hidden" id="teacherId">
+
+    <input type="text" id="teacherName" placeholder="Teacher Name">
+
+    <input type="email" id="teacherEmail" placeholder="Teacher Email">
+
+    <button onclick="saveTeacherChanges()">
+        Save Changes
+    </button>
+
+  </div>
+
+</div>
+
 <script src="../js/admin.js"></script>
 
 </body>
