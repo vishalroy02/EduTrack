@@ -12,7 +12,7 @@ mongoose
 async function createAdmin(){
 
     try{
-
+ 
         const admin=await User.findOne({
             email:"admin@edutrack.com"
         });
