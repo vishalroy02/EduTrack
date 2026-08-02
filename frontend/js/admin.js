@@ -331,80 +331,125 @@ document.getElementById("cardViewParent").onclick = () => {
     document.getElementById("viewParentBtn").click();
 };
 
-// ================= DEFAULT PAGE =================
 
 document.getElementById("teacherBtn").click();
+
+// ================= DELETE TEACHER =================
 
 async function deleteTeacher(id){
 
     if(!confirm("Delete this teacher?")) return;
 
-    const response=await fetch(
+    const response = await fetch(
 
-    `https://edutrack-m2ls.onrender.com/api/admin/teacher/${id}`,
+        `https://edutrack-m2ls.onrender.com/api/admin/teacher/${id}`,
 
-    {
+        {
+            method:"DELETE",
 
-    method:"DELETE",
+            headers:{
+                Authorization:"Bearer "+localStorage.getItem("token")
+            }
 
-    headers:{
-    Authorization:"Bearer "+localStorage.getItem("token")
-    }
+        }
 
-    });
+    );
 
-    const data=await response.json();
+    const data = await response.json();
 
     alert(data.message);
 
     document.getElementById("viewTeacherBtn").click();
 
 }
-async function editTeacher(id,name,email){
 
-const newName=prompt("Teacher Name",name);
 
-if(newName===null) return;
+// ================= EDIT TEACHER =================
 
-const newEmail=prompt("Teacher Email",email);
+function editTeacher(id,name,email){
 
-if(newEmail===null) return;
+    window.currentParent = false;
 
-const response=await fetch(
+    document.querySelector("#editTeacherModal h2").innerText = "Edit Teacher";
 
-`https://edutrack-m2ls.onrender.com/api/admin/teacher/${id}`,
+    document.getElementById("teacherId").value = id;
 
-{
+    document.getElementById("teacherName").value = name;
 
-method:"PUT",
+    document.getElementById("teacherEmail").value = email;
 
-headers:{
-
-"Content-Type":"application/json",
-
-Authorization:"Bearer "+localStorage.getItem("token")
-
-},
-
-body:JSON.stringify({
-
-name:newName,
-
-email:newEmail
-
-})
+    document.getElementById("editTeacherModal").style.display = "flex";
 
 }
 
-);
 
-const data=await response.json();
+// ================= CLOSE MODAL =================
 
-alert(data.message);
+function closeTeacherModal(){
 
-document.getElementById("viewTeacherBtn").click();
+    document.getElementById("editTeacherModal").style.display = "none";
 
 }
+
+
+// ================= SAVE CHANGES =================
+
+async function saveTeacherChanges(){
+
+    const id = document.getElementById("teacherId").value;
+
+    const name = document.getElementById("teacherName").value;
+
+    const email = document.getElementById("teacherEmail").value;
+
+    const api = window.currentParent
+
+        ? `https://edutrack-m2ls.onrender.com/api/admin/parent/${id}`
+
+        : `https://edutrack-m2ls.onrender.com/api/admin/teacher/${id}`;
+
+    const response = await fetch(api,{
+
+        method:"PUT",
+
+        headers:{
+
+            "Content-Type":"application/json",
+
+            Authorization:"Bearer "+localStorage.getItem("token")
+
+        },
+
+        body:JSON.stringify({
+
+            name,
+
+            email
+
+        })
+
+    });
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    closeTeacherModal();
+
+    if(window.currentParent){
+
+        window.currentParent = false;
+
+        document.getElementById("viewParentBtn").click();
+
+    }else{
+
+        document.getElementById("viewTeacherBtn").click();
+
+    }
+
+}
+// ================= DELETE PARENT =================
 
 async function deleteParent(id){
 
@@ -434,48 +479,21 @@ async function deleteParent(id){
 
 }
 
-async function editParent(id,name,email){
 
-    const newName = prompt("Parent Name",name);
+// ================= EDIT PARENT =================
 
-    if(newName===null) return;
+function editParent(id,name,email){
 
-    const newEmail = prompt("Parent Email",email);
+    window.currentParent = true;
 
-    if(newEmail===null) return;
+    document.querySelector("#editTeacherModal h2").innerText = "Edit Parent";
 
-    const response = await fetch(
+    document.getElementById("teacherId").value = id;
 
-        `https://edutrack-m2ls.onrender.com/api/admin/parent/${id}`,
+    document.getElementById("teacherName").value = name;
 
-        {
+    document.getElementById("teacherEmail").value = email;
 
-            method:"PUT",
-
-            headers:{
-
-                "Content-Type":"application/json",
-
-                Authorization:"Bearer "+localStorage.getItem("token")
-
-            },
-
-            body:JSON.stringify({
-
-                name:newName,
-
-                email:newEmail
-
-            })
-
-        }
-
-    );
-
-    const data = await response.json();
-
-    alert(data.message);
-
-    document.getElementById("viewParentBtn").click();
+    document.getElementById("editTeacherModal").style.display = "flex";
 
 }
