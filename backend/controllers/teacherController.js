@@ -460,4 +460,4 @@ exports.getStudentByRollNo = async (req, res) => {
 
     }
 
-};
+}; 
