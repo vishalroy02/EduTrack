@@ -27,7 +27,7 @@ app.use("/uploads", express.static("uploads"));
 
 app.get("/", (req, res) => {
   res.send("EduTrack API Running...");
-});
+}); 
 
 const PORT = process.env.PORT || 5000;
 
