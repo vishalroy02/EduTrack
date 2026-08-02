@@ -8,39 +8,7 @@ const welcomeText = document.getElementById("welcomeText");
 
 const roleContent = document.getElementById("roleContent");
 
-function loadSidebar() {
 
-    const menu = document.getElementById("sidebarMenu");
-
-    if(role==="student"){
-
-      menu.innerHTML=`
-    <li onclick="goDashboard()">🏠 Dashboard</li>
-    <li onclick="logout()">🚪 Logout</li>
-`;
-    }
-
-    else if(role==="teacher"){
-
-      menu.innerHTML=`
-    <li onclick="goDashboard()">🏠 Dashboard</li>
-    <li onclick="logout()">🚪 Logout</li>
-`;
-
-    }
-
-    else{
-
-        menu.innerHTML=`
-    <li onclick="goDashboard()">🏠 Dashboard</li>
-    <li onclick="logout()">🚪 Logout</li>
-`;
-
-    }
-
-}
-
-loadSidebar();
 
 
 if (role !== "student") {
@@ -189,12 +157,9 @@ height="120"
 style="border-radius:50%;object-fit:cover;margin-bottom:15px;"
 >`
 :
-`<img
-src="https://via.placeholder.com/120"
-width="120"
-height="120"
-style="border-radius:50%;margin-bottom:15px;"
->`
+`<div class="default-avatar">
+${student.name ? student.name.charAt(0).toUpperCase() : "U"}
+</div>`
 }
 
 <p><b>Name:</b> ${student.name}</p>
@@ -1500,8 +1465,6 @@ function closeEditProfile() {
 async function saveProfile() {
 
     try {
-
-        // Profile Update
         const profileResponse = await fetch(
             `https://edutrack-m2ls.onrender.com/api/student/update/${userId}`,
             {
