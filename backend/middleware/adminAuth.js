@@ -34,4 +34,4 @@
 
     };
 
-    module.exports = adminAuth;
+    module.exports = adminAuth; 
