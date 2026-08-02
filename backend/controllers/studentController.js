@@ -178,6 +178,7 @@ exports.updateStudentProfile = async (req, res) => {
       { new: true }
 
     ).select("-password");
+    
 
     res.status(200).json({
       message: "Profile updated successfully",
