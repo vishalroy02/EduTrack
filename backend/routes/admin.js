@@ -253,4 +253,4 @@ router.put("/parent/:id", adminAuth, async (req, res) => {
 
     }
 
-});
+}); 
